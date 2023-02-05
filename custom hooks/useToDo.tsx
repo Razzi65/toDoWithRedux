@@ -1,6 +1,12 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
+
 
 const UseToDo = () => {
+
+    const data = useSelector ((store)=>store.toDoSlice.toDoEvent)
+    console.log("data from dlice", data);
+    
 
     type toDoType = {
         item:string,
@@ -19,7 +25,7 @@ const UseToDo = () => {
    }
     const addHandler = () => {
         setAddEvent([...addEvent, addToDo])
-        console.log(addEvent)
+        console.log(data)
     }
 
     return{
